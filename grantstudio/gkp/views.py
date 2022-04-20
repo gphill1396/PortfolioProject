@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from .models import Home, About, Profile, Category, Skills, Portfolio
 
-# Create your views here.
+def index(request):
+
+    return render(request, 'index.html')
