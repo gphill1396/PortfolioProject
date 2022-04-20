@@ -17,6 +17,7 @@
         <!--===== HEADER =====-->
         <header class="l-header">
             <nav class="nav bd-grid">
+                
                 <div>
                     <a href="#" class="nav__logo">{{ home.name }}</a>
                 </div>
@@ -41,7 +42,7 @@
             <!--===== HOME =====-->
             <section class="home" id="home">
                 <div class="home__container bd-grid">
-                    <h1 class="home__title"><span>{{ home.greetings_1 }}</span><br>{{ home.greetings_2 }}</h1>
+                    <h1 class="home__title"><span>{{ home.greetings_1 }}</span><br>{{ home.greetings_2 }}.</h1>
 
                     <div class="home__scroll">
                         <a href="#about" class="home__scroll-link"><i class='bx bx-up-arrow-alt' ></i>Scroll down</a>
@@ -57,18 +58,23 @@
 
                 <div class="about__container bd-grid">
                     <div class="about__img">
+                        <!-- <img src="{% static 'assets/img/perfil.png' %}" alt=""> -->
                         <img src="{{ about.profile_img.url }}" alt="">
                     </div>
 
                     <div>
-                        <h2 class="about__subtitle">{{ about.heading}}</h2>
-                        <span class="about__profession">{{ about.career}}</span>
-                        <p class="about__text">{{ about.description}}</p>
+                        <h2 class="about__subtitle">{{ about.heading }}</h2>
+                        <span class="about__profession">{{ about.career }}</span>
+                        <p class="about__text">{{ about.description }}</p>
 
                         <div class="about__social">
-                            <a href="#" class="about__social-icon"><i class='bx bxl-linkedin' ></i></a>
-                            <a href="#" class="about__social-icon"><i class='bx bxl-github' ></i></a>
-                            <a href="#" class="about__social-icon"><i class='bx bxl-dribbble' ></i></a>
+
+                            {% for profile in about.profile_set.all %}
+                                <a href="{{ profile.link }}" class="about__social-icon">
+                                    <i class='bx bxl-{{ profile.social_name }}' ></i>
+                                </a>
+                            {% endfor %}
+                            
                         </div>
                     </div>
                 </div>
@@ -100,9 +106,11 @@
             <section class="portfolio section" id="portfolio">
                 <h2 class="section-title">Portfolio</h2>
 
+                
                 <div class="portfolio__container bd-grid">
-                    {% for portfolio in portfolios %}
 
+                    {% for portfolio in portfolios %}
+                    
                     <div class="portfolio__img">
                         <img src="{{ portfolio.image.url }}" alt="">
 
@@ -112,7 +120,9 @@
                     </div>
 
                     {% endfor %}
+                    
                 </div>
+                
             </section>
 
             <!--===== CONTACT =====-->
@@ -123,24 +133,28 @@
                     <div class="contact__info">
                         <h3 class="contact__subtitle">EMAIL</h3>
                         <span class="contact__text">info.mail.com</span>
+<!-- 
+                        <h3 class="contact__subtitle">PHONE</h3>
+                        <span class="contact__text">+20 999-999</span>
+                        <h3 class="contact__subtitle">ADRESS</h3>
+                        <span class="contact__text">My contry</span> -->
+                    </div>
+
+                    <div class="contact__info">
 
                         <h3 class="contact__subtitle">PHONE</h3>
                         <span class="contact__text">+20 999-999</span>
 
-                        <h3 class="contact__subtitle">ADRESS</h3>
-                        <span class="contact__text">My contry</span>
                     </div>
 
-                    <form action="" class="contact__form">
+                    <!-- <form action="" class="contact__form">
                         <div class="contact__inputs">
                             <input type="text" placeholder="Name" class="contact__input">
                             <input type="mail" placeholder="Email" class="contact__input">
                         </div>
-
                         <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-
                         <input type="submit" value="Enviar" class="contact__button">
-                    </form>
+                    </form> -->
                 </div>
             </section>
         </main>

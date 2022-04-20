@@ -30,5 +30,5 @@ class CategoryAdmin(admin.ModelAdmin):
     ]
 
 
-    # PORTFOLIO
-    admin.site.register(Portfolio)
+# PORTFOLIO
+admin.site.register(Portfolio)
