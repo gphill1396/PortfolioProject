@@ -2,7 +2,8 @@
 <!DOCTYPE html>
     <html lang="en">
     <head>
-        <title>Portfolio Home Page</title>
+        <title>Grant Studio</title>
+        <link rel="icon" type="image/x-icon" href="{% static 'assets/img/GPFavicon.svg' %}">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -15,13 +16,16 @@
         <!--- ===== FONTAWESOME ===== --->
         <script src="https://kit.fontawesome.com/03fee5fc61.js" crossorigin="anonymous"></script>
 
+        <!--- ===== GOOGLE FONTS (RALEWAY FONT) ===== --->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;500;700;900&display=swap" rel="stylesheet">
+
         <!-- ===== JS ===== -->
         <script type="text/javasript" src="{% static 'bootstrap-5.1.3-dist\js\bootstrap.min.js' %}"></script>
 
 
         <!--- ===== CUSTOM STYLES ===== --->
-
-        <!--- Put playlist at bottom of screen --->
         <style>
             #Iframe {
                 position: absolute;
@@ -29,17 +33,56 @@
                 bottom: 0px;
                 margin: 0px;
             }
+
+            h1 {
+                font-family: 'Raleway', monospace;
+                font-weight: 200;
+                font-kerning: normal;
+            }
+
+            h2 {
+                font-family: 'Raleway', monospace;
+                font-weight: 900;
+                font-kerning: normal;
+            }
+
+            h3 {
+                font-family: 'Raleway', monospace;
+                font-weight: 500;
+                font-kerning: normal;
+            }
+
+            h4 {
+                font-family: 'Raleway', monospace;
+                font-weight: 500;
+                font-kerning: normal;
+            }
+
+            h5 {
+                font-family: 'Raleway', monospace;
+                font-weight: 700;
+                font-kerning: normal;
+            }
+
+            h6 {
+                font-family: 'Raleway', monospace;
+                font-weight: 500;
+                font-kerning: normal;
+            }
+
+            span {
+                font-family: 'Raleway', monospace;
+                font-weight: 500;
+                font-kerning: normal;
+            }
+
+            p {
+                font-family: 'Raleway', monospace;
+                font-weight: 500;
+                font-kerning: normal;
+            }
+
         </style>
-
-        <!--- Create Sidebar Mechanic --->
-
-        <div class="align-items-center d-flex">
-            <div class="flex-shrink-1">
-                <a href="#" class="d-flex align-items-center col-lg-4 link-dark text-decoration-none">
-                    <i class="bi bi-bootstrap fs-2 text-dark"></i>
-                </a>
-            </div>
-        </div>
 
     </head>
     <body>
@@ -51,80 +94,218 @@
             <div>
 
                 <!--- SIDE BAR --->
-                <div>
-            
-                    <!--- TOP HALF --->
-                    <div>
-                
-                        <!--- LOGO --->
-                        <div>
-                    
-                        </div> 
-
-                        <!--- NAVIGATION SHORTCUTS --->
-                        <div>
-
+                <div class="col-3">
+                    <div class="bg-dark sticky-top" style="padding: 5px;">
+                        <ul class="nav flex-sm-column text-truncate">
+    
+                            <!--- TOP HALF --->
+                            <!--- LOGO --->
+                            <div >
+                                <a href="#">
+                                    <img src="{% static 'assets/img/GPLogo.svg' %}" alt="GP Logo" width = 50% height = 50%>
+                                </a>
+                                
+                            </div>
+    
+                            
+    
+                            
+                            <!--- NAVIGATION SHORTCUTS --->
                             <!--- HOME LINK --->
-                            <a >
-
-                            </a>
-
+                            <li class="nav-item">
+                                <a href="#" class="nav-link px-2 text-truncate">
+                                    <i class="fa-solid fa-house" style="color: white"></i>
+                                    <span class="d-none d-sm-inline" style="color: white">Home</span>
+                                </a>
+                            </li>
+    
                             <!--- ABOUT LINK --->
-                            <a >
-
-                            </a>
-
+                            <li>
+                                <a href="#" class="nav-link px-2 text-truncate">
+                                    <i class="fa-solid fa-person" style="color: white"></i>
+                                    <span class="d-none d-sm-inline" style="color:white">About</span>
+                                </a>
+                            </li>
+    
                             <!--- SKILLS LINK --->
-                            <a >
-
-                            </a>
-
+                            <li>
+                                <a href="#" class="nav-link px-2 text-truncate"><i class="bi bi-card-text fs-5"></i>
+                                    <i class="fa-solid fa-screwdriver-wrench" style="color: white"></i>
+                                    <span class="d-none d-sm-inline" style="color: white">Skills</span> </a>
+                            </li>
+    
                             <!--- BUCKET LISTS LINK --->
-                            <a >
-
-                            </a>
-
+                            <li>
+                                <a href="#" class="nav-link px-2 text-truncate"><i class="bi bi-bricks fs-5"></i>
+                                    <i class="fa-solid fa-bucket" style="color: white"></i>
+                                    <span class="d-none d-sm-inline" style="color: white">Bucket Lists</span> </a>
+                            </li>
+    
                             <!--- CONTACT LINK --->
-                            <a >
-
-                            </a>
-
-                        </div> 
-
-                    </div>
-
-                    <!--- BOTTOM HALF --->
-                    <div>
-                
-                        <!--- CONTENT BROWSING --->
+                            <li>
+                                <a href="#" class="nav-link px-2 text-truncate"><i class="bi bi-people fs-5"></i>
+                                    <i class="fa-solid fa-address-book" style="color: white"></i>
+                                    <span class="d-none d-sm-inline" style="color: white">Contact</span> </a>
+                            </li>
+                        </ul>
+    
+                        <!--- BOTTOM HALF --->
                         <div>
                     
-                            <!--- LOOP THROUGH FOLDERS AND HITS --->
+                            <!--- CONTENT BROWSING --->
+                            <div>
+                        
+                                <!--- LOOP THROUGH FOLDERS AND HITS --->
+                                <a >
+    
+                                </a>
+    
+                            </div> 
+    
+                            <!--- SCROLL BAR --->
                             <a >
-
+    
                             </a>
-
+    
                         </div> 
+    
+                    </div>
+                </div>
+               
+    
+                    
 
-                        <!--- SCROLL BAR --->
-                        <a >
-
-                        </a>
-
-                    </div> 
-
-                </div> 
+                
+                    
 
                 <!--- PAGE DISPLAY --->
                 <div>
-            
-                </div> 
-                
+
+                    <!--- CONTACT DROPDOWN --->
+                    <div>
+
+                    </div>
+
+                    <!--- PAGE TITLE --->
+                    <div>
+
+                    </div>
+
+                    <!--- PAGE TITLE --->
+                    <h1>
+
+                    </h1>
+
+                    <!--- QUICK NAV CARDS --->
+                    <div>
+
+                        <!--- QUICK NAV TOP ROW --->
+                        <div>
+
+                            <!--- QUICK NAV CARD ONE --->
+                            <div>
+
+                                <!--- QUICK NAV CARD ONE IMAGE --->
+                                <img>
+
+                                </img>
+
+                                <!--- QUICK NAV CARD ONE TITLE --->
+                                <h1>
+
+                                </h1>
+
+                            </div>
+
+                            <!--- QUICK NAV CARD TWO --->
+                            <div>
+
+                                <!--- QUICK NAV CARD TWO IMAGE --->
+                                <img>
+
+                                </img>
+
+                                <!--- QUICK NAV CARD TWO TITLE --->
+                                <h1>
+
+                                </h1>
+
+                            </div>
+
+                        </div>
+
+                        <!--- QUICK NAV BOTTOM ROW --->
+                        <div>
+
+                            <!--- QUICK NAV CARD THREE --->
+                            <div>
+
+                                <!--- QUICK NAV CARD THREE IMAGE --->
+                                <img>
+
+                                </img>
+
+                                <!--- QUICK NAV CARD THREE TITLE --->
+                                <h1>
+
+                                </h1>
+
+                            </div>
+
+                            <!--- QUICK NAV CARD FOUR --->
+                            <div>
+
+                                <!--- QUICK NAV CARD FOUR IMAGE --->
+                                <img>
+
+                                </img>
+
+                                <!--- QUICK NAV CARD FOUR TITLE --->
+                                <h1>
+
+                                </h1>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!--- TOP HITS LABEL --->
+                    <h1>
+
+                   </h1>
+
+                    <!--- TOP HITS CARDS --->
+                    <div>
+
+                        <!--- LOOP THROUGH TOP HITS --->
+                        <div>
+
+                            <!--- TOP HIT CARD IMAGE --->
+                            <img>
+
+                            </img>
+
+                            <!--- TOP HIT CARD TITLE --->
+                            <h1>
+
+                            </h1>
+
+                            <!--- QUICK NAV CARD TEXT --->
+                            <p>
+
+                            </P>
+
+                   </div>
+
+                </div>
+
             </div>
 
             <!--- EMBEDDED PLAYLIST --->
             <div>
-
+                <iframe style="border-radius:0px" src="https://open.spotify.com/embed/playlist/6bS3bTeu26LOlahLEWvtcT?utm_source=generator" id="Iframe" width="100%" height="80px" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
             </div>
 
         </div>
